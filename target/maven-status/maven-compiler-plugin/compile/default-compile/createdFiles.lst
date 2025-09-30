@@ -1,0 +1,5 @@
+com\agent\ai\starter\SimpleVerticle.class
+com\agent\ai\starter\InvoiceVerticle.class
+com\agent\ai\starter\Main.class
+com\agent\ai\starter\OrderVerticle.class
+com\agent\ai\starter\PaymentVerticle.class
