@@ -26,8 +26,8 @@ What agents need is a **nervous system**.
 
 What comes to mind is good old **CORBA** and **RMI**. These used to be popular in the old days. Yes, agents are not a new idea. *Déjà vu!*  
 
-For this implementation, we use a modern, lightweight, resource-efficient, and highly scalable alternative:  
-👉 **[Vert.x](https://vertx.io/)** — a framework that comes with an internal messaging platform.  
+For this below implementation, we use a modern, lightweight, resource-efficient, and highly scalable alternative:  
+**[Vert.x](https://vertx.io/)** a framework that comes with an internal messaging platform.  
 
 We deployed **3 virtual machines in Azure**, intentionally placed in different regions.  
 
