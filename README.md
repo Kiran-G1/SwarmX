@@ -36,24 +36,40 @@ We deployed **3 virtual machines in Azure**, intentionally placed in different r
 
 ---
 
+## Architecture
+
+Here’s the high-level architecture of the system:
+
+![Architecture](images/architecure.png)
+
+---
+
 ## Happy Path Case
 
 1. **Cluster Ready**  
-   - 3 VMs initialized and ready to take the shots.  
+   3 VMs initialized and ready to take the shots.  
+
+   ![Cluster Ready](images/readytofire.png)
 
 2. **Agents Triggered**  
-   - Each agent starts up in its VM and registers itself on the event bus.  
+   Agents register on the event bus, ready for action.  
+
+   ![Agents Running](images/AgentsRunning.png)
 
 3. **Discovery**  
-   - Agents automatically discover each other across network ports.  
+   Agents discover each other automatically across network ports.  
+
+   ![Discovery](images/discovery.png)
 
 4. **Communication**  
-   - Order agent sends events to Payment, which forwards them to Invoice.  
+   Order agent sends events to Payment, which forwards to Invoice.  
 
 5. **Resilience**  
-   - When the **Payment agent** was killed, the **Order agent** immediately knew nobody was listening to its events.  
-   - The **Invoice agent** also noticed the cluster change as one node detached.  
-   - No blind retries. No silent failures.  
+   When the **Payment agent** was killed, the **Order agent** immediately knew nobody was listening to its events.  
+   The **Invoice agent** also noticed the cluster change as one node detached.  
+   No blind retries. No silent failures.  
+
+   ![Failure Resiliency](images/failureResillency.png)
 
 ---
 
@@ -62,4 +78,4 @@ We deployed **3 virtual machines in Azure**, intentionally placed in different r
 With Vert.x + Hazelcast, we can build:  
 - Distributed AI agents across regions  
 - Reactive and fault-tolerant communication  
-- Scalable systems without REST API spaghetti 
+- Scalable systems without REST API spaghetti  
