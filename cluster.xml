@@ -1,0 +1,28 @@
+<hazelcast xmlns="http://www.hazelcast.com/schema/config"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://www.hazelcast.com/schema/config
+           http://www.hazelcast.com/schema/config/hazelcast-config-4.0.xsd">
+
+  <cluster-name>dev</cluster-name>
+
+  <network>
+    <!-- Bind only to private IP subnet -->
+    <interfaces enabled="true">
+      <interface>10.0.0.*</interface>
+    </interfaces>
+
+    <!-- Fix port to 5701 -->
+    <port auto-increment="false">5701</port>
+
+    <join>
+      <multicast enabled="false"/>
+      <tcp-ip enabled="true">
+        <!-- Use private IPs of all nodes -->
+        <member>10.0.0.4:5701</member> <!-- VM1 -->
+        <member>10.0.0.5:5701</member> <!-- VM2 -->
+        <member>10.0.0.6:5701</member> <!-- VM3 -->
+      </tcp-ip>
+    </join>
+  </network>
+
+</hazelcast>
