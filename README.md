@@ -29,7 +29,7 @@ What comes to mind is good old **CORBA** and **RMI**. These used to be popular i
 For this below implementation, we use a modern, lightweight, resource-efficient, and highly scalable alternative:  
 **[Vert.x](https://vertx.io/)** a framework that comes with an internal messaging platform.  
 
-We deployed **3 virtual machines in Azure**, intentionally placed in different regions.  
+We deployed **3 virtual machines in Azure**, intentionally **placed in different regions.**  
 
 - **Hazelcast cluster configuration** was used to connect these VMs together.  
 - All virtual machines communicate over a **private network** for safety.  
